@@ -4,7 +4,8 @@ import Pokeball from '../pokeball.png'
 import { connect } from 'react-redux'
 
 class Home extends Component {
-  render(){
+  render() {
+    console.log(this.props)
     const { posts } = this.props
     const postList = posts.length ? (
       posts.map(post => {
@@ -21,8 +22,8 @@ class Home extends Component {
         )
       })
     ) : (
-      <div className="center">No posts to show</div>
-    );
+        <div className="center">No posts to show</div>
+      );
 
     return (
       <div>
@@ -36,9 +37,11 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(`this is state from redux and includes state.posts: ${state.posts}`)
   return {
     posts: state.posts
   }
+
 }
 
 export default connect(mapStateToProps)(Home)
