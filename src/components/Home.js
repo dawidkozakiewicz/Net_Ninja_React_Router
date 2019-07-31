@@ -37,7 +37,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(`this is state from redux and includes state.posts: ${state.posts}`)
+  console.log(state)
   return {
     posts: state.posts
   }
